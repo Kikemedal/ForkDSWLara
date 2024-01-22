@@ -19,4 +19,4 @@ Route::get("/about", "App\Http\Controllers\HomeController@about")->name("home.ab
 
 // Esta sera la ruta que al clicar en productos nos lleve al controlador.
 
-//Route::get('/user/{id}', [UserController::class, 'show']);
+Route::get("/productos", "App\Http\Controllers\ProductController@index") ->name("home.productos");
