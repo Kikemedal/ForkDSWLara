@@ -36,15 +36,19 @@ class ProductController extends Controller
     public function index(){
         //Este metodo devuelve la lista de productos que se debe mostrar por pantalla.
 
-        $vista =[];
+        $vista = [];
+
         $vista["Titulo"] = "Listado de Productos - Tienda online";
         $vista["Subtitulo"] ="Listado de productos";
+
+        //Datos que se van a pasar en una sola variable
+        $datos = ["vista" => $vista , "productos" => $this->productos];
 
         //La funcion view indica a laravel que se busque dentro de la carpeta resources/views/
         //Con la funcion with, decimos que nos devuelva la vista con la variable llamada vista
         //que es el array $vista. Es decir, la funcion with envia la variable creada en el controlador
         //a la vista para que se pueda acceder a esta desde la vista.
-        return view("home.productos")->with("vista", $vista); 
+        return view("home.productos")->with("datos", $datos); 
 
     }
 
