@@ -8,11 +8,22 @@
 @extends('layouts.app')
 
 <!-- El titulo de esta pagina vendra de la informacion del array del controlador de Productos-->
-@section('title', $vista['Titulo'])
+@section('title', $datos['vista']['Titulo'])
 
-<!-- Aqui sucede lo mismo que con la sección anterir -->
-@section('subtitle', $vista['Subtitulo'])
+<!-- Aqui sucede lo mismo que con la sección anterior -->
+@section('subtitle', $datos['vista']['Subtitulo'])
 
 <!-- Inyectamos html de manera que se vea la infromacion almacenada en el array creado en productos -->
+<!-- A la izquierda se coloca la imagen del producto y a la derecha la informacion acerca del producto -->
+
+@section('content') 
+
+    <div class="row">
+
+        
+    </div>
+
+
+@endsection
 
 

@@ -56,10 +56,30 @@ class ProductController extends Controller
         //Este metodo suelta una vista del producto especifico dependiendo del id que se reciba
         //El array producto tendrá las caracterísitcas del mismo que luego en la vista se 
         //seleccionarán.
-        $producto = [];
+        $vista =[];
+        $producto;
+        switch($id){
+            case "1":
+                $producto = $this->productos["Movil"];
+                $vista["Titulo"] = "Movil";
+                $vista["Subtitulo"] = "Informacion Iphone";
+                break;
+            case "2":
+                $producto = $this->productos["Television"];
+                $vista["Titulo"] = "Television";
+                $vista["Subtitulo"] = "Informacion sobre el televisor";
+                break;
+            case "3":   
+                $producto = $this->productos["Reloj"];
+                $vista["Titulo"] = "Reloj";
+                $vista["Subtitulo"] = "Informacion sobre el reloj";
+                break;
+        }
 
+        $datos = ["vista" => $vista, "producto" => $producto];
 
-        return view("home.producto") -> with
+        //Devuelve la vista y le pasa la variable con el nombre producto
+        return view("home.producto") -> with('datos', $datos);
 
         
     }
