@@ -21,7 +21,7 @@
     @foreach($datos['productos'] as $producto)
         <?php $imagen=$producto['imagen']; ?>
         <div class="col-md-6 col-lg-4 mb-2">
-            <img src="{{ asset("/img/$imagen") }}" class="img-fluid rounded">
+            <a href="{{ route('home.producto') }}"> <img src="{{ asset("/img/$imagen") }}" class="img-fluid rounded"> </a>
         </div>
     @endforeach
     </div>
