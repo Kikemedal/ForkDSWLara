@@ -54,9 +54,12 @@ class ProductController extends Controller
 
     public function show($id){
         //Este metodo suelta una vista del producto especifico dependiendo del id que se reciba
-        //El array producto tendrá las caracterísitcas del mismo que leugo en la vista se 
+        //El array producto tendrá las caracterísitcas del mismo que luego en la vista se 
         //seleccionarán.
         $producto = [];
+
+
+        return view("home.producto") -> with
 
         
     }

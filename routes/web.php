@@ -21,4 +21,4 @@ Route::get("/about", "App\Http\Controllers\HomeController@about")->name("home.ab
 Route::get("/productos", "App\Http\Controllers\ProductController@index") ->name("home.productos");
 
 //Esta ruta lleva al metodo show del controlador de productos.
-Route::get("/productos/id", "App\Http\Controllers\ProductController@show")->name("home.producto");
+Route::get("/productos/{id}", "App\Http\Controllers\ProductController@show")->name("home.producto");
