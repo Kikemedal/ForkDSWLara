@@ -38,10 +38,11 @@ class ProductController extends Controller
     ];
     */
 
-    public $productos = Product::all();
 
     public function index(){
         //Este metodo devuelve la lista de productos que se debe mostrar por pantalla.
+            
+        $productos = Product::all(); //Obtengo todos los registros de la base de datos.
 
         $vista = [];
 
@@ -49,7 +50,7 @@ class ProductController extends Controller
         $vista["Subtitulo"] ="Listado de productos";
 
         //Datos que se van a pasar en una sola variable
-        $datos = ["vista" => $vista , "productos" => $this->productos];
+        $datos = ["vista" => $vista , "productos" => $productos];
 
         //La funcion view indica a laravel que se busque dentro de la carpeta resources/views/
         //Con la funcion with, decimos que nos devuelva la vista con la variable llamada vista
@@ -65,23 +66,9 @@ class ProductController extends Controller
         //seleccionarán.
         $vista =[];
         $producto;
-        switch($id){
-            case "1":
-                $producto = $this->productos["Movil"];
-                $vista["Titulo"] = "Movil";
-                $vista["Subtitulo"] = "Informacion Iphone";
-                break;
-            case "2":
-                $producto = $this->productos["Television"];
-                $vista["Titulo"] = "Television";
-                $vista["Subtitulo"] = "Informacion sobre el televisor";
-                break;
-            case "3":   
-                $producto = $this->productos["Reloj"];
-                $vista["Titulo"] = "Reloj";
-                $vista["Subtitulo"] = "Informacion sobre el reloj";
-                break;
-        }
+        $producto = Product::findOrFail($id); //Obtengo el producto con el id pasado por parámetro. En caso de error salta una excepción.
+        $vista["Titulo"] = $producto["nombre"];
+        $vista["Subtitulo"] = $producto["nombre"];
 
         $datos = ["vista" => $vista, "producto" => $producto];
 
