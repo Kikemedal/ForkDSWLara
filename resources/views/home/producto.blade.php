@@ -16,14 +16,23 @@
 <!-- Inyectamos html de manera que se vea la infromacion almacenada en el array creado en productos -->
 <!-- A la izquierda se coloca la imagen del producto y a la derecha la informacion acerca del producto -->
 
-@section('content') 
-
-    <div class="row">
-
-        
+@section('content')
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ asset('/img/'.$datos["producto"]["imagen"]) }}" class="img-fluid rounded-start">
     </div>
-
-
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">
+           {{ $datos["producto"]["nombre"] }} ({{ $datos["producto"]["precio"] }} €)
+        </h5>
+        <p class="card-text">{{ $datos["producto"]["descripcion"] }}</p>
+        <p class="card-text"><small class="text-muted">Add to Cart</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 

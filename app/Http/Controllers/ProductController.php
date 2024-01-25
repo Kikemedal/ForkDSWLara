@@ -15,21 +15,21 @@ class ProductController extends Controller
             "nombre" => "Iphone 12",
             "descripcion" => "Smartphone de 6'0 pulgadas",
             "imagen" => "movil.png", 
-            "precio" => "999€",
+            "precio" => "999",
         ],
         "Television" => [
             "id" => "2",
             "nombre" => "Lg OLED 59”",
             "descripcion" => "Television OLED 4k",
             "imagen" => "Television.png", 
-            "precio" => "1195€",
+            "precio" => "1195",
         ],
         "Reloj" => [
             "id" => "3",
             "nombre" => "Seiko 5",
             "descripcion" => "Reloj Seiko deportivo para el dia a dia",
             "imagen" => "reloj.png", 
-            "precio" => "330€",
+            "precio" => "330",
         ],
     ];
 
