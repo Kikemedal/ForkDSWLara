@@ -56,7 +56,7 @@ class ProductController extends Controller
         //Con la funcion with, decimos que nos devuelva la vista con la variable llamada vista
         //que es el array $vista. Es decir, la funcion with envia la variable creada en el controlador
         //a la vista para que se pueda acceder a esta desde la vista.
-        return view("home.productos")->with("datos", $datos); 
+        return view("product.productos")->with("datos", $datos); 
 
     }
 
@@ -73,7 +73,7 @@ class ProductController extends Controller
         $datos = ["vista" => $vista, "producto" => $producto];
 
         //Devuelve la vista y le pasa la variable con el nombre producto
-        return view("home.producto") -> with('datos', $datos);
+        return view("product.producto") -> with('datos', $datos);
 
         
     }
