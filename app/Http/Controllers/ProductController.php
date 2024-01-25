@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     //La vista asociada a este controlador debe iterar sobre este array accediento a esta información
     // y mostrandola. Eso hace que la información este centralizada en esta clase.
     
+    //Usamo el modelo asi que el array ya no nos vale para conseguir los datos de los productos.
+
+    /*
     public $productos = [
         "Movil" => [
             "id" => "1",
@@ -32,6 +36,9 @@ class ProductController extends Controller
             "precio" => "330",
         ],
     ];
+    */
+
+    public $productos = Product::all();
 
     public function index(){
         //Este metodo devuelve la lista de productos que se debe mostrar por pantalla.
