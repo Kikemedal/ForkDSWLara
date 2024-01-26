@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous" />
-  <link href="***************" rel="stylesheet" />
+  <link href="/public/css/admin.css" rel="stylesheet" />
   <title>*** CAMPO title ***</title>
 </head>
 
@@ -30,7 +30,7 @@
     <div class="col content-grey">
       <nav class="p-3 shadow text-end">
         <span class="profile-font">Admin</span>
-        <img class="img-profile rounded-circle" src="**** IMAGEN UNDRAW ****">
+        <img class="img-profile rounded-circle" src="/public/img/undraw_profile.svg">
       </nav>
 
       <div class="g-0 m-5">
