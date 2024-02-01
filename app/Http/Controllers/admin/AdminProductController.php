@@ -12,6 +12,6 @@ class AdminProductController extends Controller
         $datos = [];
         $datos["Titulo"] = "Admin Page - Products - Online Store";
         $datos["Productos"] = Product::all();
-        return view('admin.product.index')->with("datos", $datos);
+        return view('admin.Product.index')->with("datos", $datos);
     }
 }

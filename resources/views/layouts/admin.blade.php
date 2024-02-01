@@ -14,15 +14,15 @@
   <div class="row g-0">
     <!-- sidebar -->
     <div class="p-3 col fixed text-white bg-dark">
-      <a href="*** ENLACE A LA PÁGINA PRINCIPAL DEL PANEL DE CONTROL ***" class="text-white text-decoration-none">
+      <a href="{{ route('admin.home.index') }}" class="text-white text-decoration-none">
         <span class="fs-4">Admin Panel</span>
       </a>
       <hr />
       <ul class="nav flex-column">
-        <li><a href="*** ENLACE A LA PÁGINA PRINCIPAL DEL PANEL DE CONTROL ***" class="nav-link text-white">- Admin - Inicio</a></li>
-        <li><a href="*** ENLACE A LA ADMINISTRACIÓN DE PRODUCTOS ***" class="nav-link text-white">- Admin - Productos</a></li>
+        <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- Admin - Inicio</a></li>
+        <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">- Admin - Productos</a></li>
         <li>
-          <a href="*** ENLACE A LA PÁGINA PRINCIPAL ***" class="mt-2 btn bg-primary text-white">Volver a la página principal</a>
+          <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Volver a la página principal</a>
         </li>
       </ul>
     </div>
@@ -30,7 +30,7 @@
     <div class="col content-grey">
       <nav class="p-3 shadow text-end">
         <span class="profile-font">Admin</span>
-        <img class="img-profile rounded-circle" src="/public/img/undraw_profile.svg">
+        <img class="img-profile rounded-circle" src="{{ asset('/img/undraw_profile.svg') }}">
       </nav>
 
       <div class="g-0 m-5">
@@ -43,7 +43,7 @@
   <div class="copyright py-4 text-center text-white">
     <div class="container">
       <small>
-            *** PIE DE PÁGINA ***
+        PIE DE PÁGINA 
       </small>
     </div>
   </div>
