@@ -22,3 +22,7 @@ Route::get("/productos", "App\Http\Controllers\ProductController@index") ->name(
 
 //Esta ruta lleva al metodo show del controlador de productos.
 Route::get("/productos/{id}", "App\Http\Controllers\ProductController@show")->name("product.producto");
+
+//Rutas que Conectan el metodo index de los controladores con las vistas
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
+Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");

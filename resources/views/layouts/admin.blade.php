@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous" />
   <link href="/public/css/admin.css" rel="stylesheet" />
-  <title>*** CAMPO title ***</title>
+  <title>@yield('title', 'Admin - Online Store')</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
       </nav>
 
       <div class="g-0 m-5">
-        *** CAMPO content ***
+        @yield('content')
       </div>
     </div>
   </div>
