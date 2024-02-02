@@ -9,8 +9,8 @@ class Product extends Model
 {
     use HasFactory;
 
-    //Dio error al conectarase a la base de datos debido a que en el PhpMyadmin, a la izquierda salia el nombre
-    // de la base de datos en mayúsculas y estaba en minúsculas.
+    //La linea de abajo se coloca en caso de que la tabla se llame de manera distinta al plural en minúsculas del nombre
+    //del modelo.
     protected $table = 'products';
 
 }
