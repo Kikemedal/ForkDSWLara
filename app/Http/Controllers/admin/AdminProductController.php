@@ -43,7 +43,7 @@ class AdminProductController extends Controller
         //Teoricamente se guardan los datos en la tabla
         $producto->save();
 
-
+        //Se returna la vista de donde ha sido llamado este metodo del controlador
        return back();
 
 
