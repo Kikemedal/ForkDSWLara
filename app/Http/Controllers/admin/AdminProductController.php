@@ -37,10 +37,14 @@ class AdminProductController extends Controller
         $producto = new Product;
         $producto->nombre = $request->input('name');
         $producto->descripcion = $request->input('description');
+        $producto->imagen = 'cargando.png';
         $producto->precio = $request->input('price');
 
         //Teoricamente se guardan los datos en la tabla
         $producto->save();
+
+
+       return back();
 
 
 

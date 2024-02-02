@@ -7,7 +7,7 @@
   </div>
   <div class="card-body">
 
-    <form method="POST" action="{{route('admin.producto')}}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('admin.producto')}}">
       @csrf
       <div class="row">
         <div class="col">
@@ -23,16 +23,6 @@
             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Precio:</label>
             <div class="col-lg-10 col-md-6 col-sm-12">
               <input name="price" value="" type="number" class="form-control">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-3 row">
-            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Imagen </label>
-            <div class="col-lg-10 col-md-6 col-sm-12">
-              <input name="imagen" type="file" class="form-control">
             </div>
           </div>
         </div>
@@ -61,12 +51,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>[ ID ]</td>
-          <td>[ NOMBRE ]</td>
-          <td><a href="#">Editar</a></td>
-          <td><a href="#">Eliminar</a></td>
-        </tr>
+        <!--Implementamos bucle que recorra el array de los productos que se recogen de la base de datos en el controlador-->
+        @foreach($datos['Productos'] as $productos)
+          <tr>
+            <td> {{$productos->id}} </td>
+            <td> {{$productos->nombre}} </td>
+            <td><a href="#">Editar</a></td>
+            <td><a href="#">Eliminar</a></td>
+          </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
