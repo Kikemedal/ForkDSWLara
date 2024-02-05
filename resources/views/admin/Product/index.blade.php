@@ -7,14 +7,14 @@
   </div>
   <div class="card-body">
 
-    <form method="POST" action="{{route('admin.producto')}}">
+    <form method="POST" action="{{route('admin.producto')}}" enctype="multipart/form-data">
       @csrf
       <div class="row">
         <div class="col">
           <div class="mb-3 row">
             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre:</label>
             <div class="col-lg-10 col-md-6 col-sm-12">
-              <input name="name" value="" type="text" class="form-control">
+              <input name="name" value="{{old('name')}}" type="text" class="form-control">
             </div>
           </div>
         </div>
@@ -22,7 +22,17 @@
           <div class="mb-3 row">
             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Precio:</label>
             <div class="col-lg-10 col-md-6 col-sm-12">
-              <input name="price" value="" type="number" class="form-control">
+              <input name="price" value="{{old('price')}}" type="number" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3 row">
+            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Imagen </label>
+            <div class="col-lg-10 col-md-6 col-sm-12">
+              <input name="imagen" type="file" class="form-control">
             </div>
           </div>
         </div>
