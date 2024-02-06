@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request; //Esta linea trae el codigo sobre la clase request
 //Necesaria para la obtencion de datos del formulario y para la validacion de los mismos.
@@ -30,21 +31,32 @@ class AdminProductController extends Controller
             'name' => 'required|min:3',
             'description' => 'required|min:3',
             'price' => 'required|min:1',
+            'imagen' => 'image|required',
         ]);
+
+
         //Se almacenan campos de los inputs en cada atributo del objeto Product que referencia a los 
         //respectivos campos de la tabla.
-
         $producto = new Product;
         $producto->nombre = $request->input('name');
         $producto->descripcion = $request->input('description');
-        $producto->imagen = 'cargando.png';
         $producto->precio = $request->input('price');
+
+        //Modificamos el nombre de la imagen añadiendo el id del producto
+        $nombre = $request->file("imagen")->getClientOriginalName();
+        $nombre =
+
+        //Imagen subida al atributo del objeto producto
+        
+
+        //Cambiamos el fichero de la dirección temporal a la ubicación defginitiva:
+        Storage::disk('public')->put;
 
         //Teoricamente se guardan los datos en la tabla
         $producto->save();
 
         //Se returna la vista de donde ha sido llamado este metodo del controlador
-       return back();
+        return back();
 
 
 
