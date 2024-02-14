@@ -34,6 +34,13 @@ class AdminProductController extends Controller
             'imagen' => 'image|required',
         ]);
 
+        //Ordenamos los registros por el metodo latest mediante el campo ID de manera descendente 
+        //y obtenemos el primer resultado, es decir, el ultimo registro.
+        $ultimoRegistro = Product::latest('id')->first();
+
+        //Accede al ID del último registro
+        $ultimoId = $ultimoRegistro->id;
+
 
         //Se almacenan campos de los inputs en cada atributo del objeto Product que referencia a los 
         //respectivos campos de la tabla.
@@ -43,14 +50,15 @@ class AdminProductController extends Controller
         $producto->precio = $request->input('price');
 
         //Modificamos el nombre de la imagen añadiendo el id del producto
-        $nombre = $request->file("imagen")->getClientOriginalName();
-        $nombre =
+        $nombre = $request->file("imagen")->getClientOriginalName(); //Este metodo devuelve la extensión incuilda.
+        $siguienteID = $ultimoId + 1;
+        $nombreImagen = strval($siguienteID) . "_" . $nombre;
 
         //Imagen subida al atributo del objeto producto
-        
+        $producto->imagen = $nombreImagen;
 
-        //Cambiamos el fichero de la dirección temporal a la ubicación defginitiva:
-        Storage::disk('public')->put;
+        //Cambiamos el fichero de la dirección temporal a la ubicación definitiva:
+        Storage::disk('public')->put($nombreImagen, file_get_contents($request->file('imagen')->getRealPath()));
 
         //Teoricamente se guardan los datos en la tabla
         $producto->save();
