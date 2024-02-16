@@ -76,7 +76,15 @@
             <td> {{$productos->id}} </td>
             <td> {{$productos->nombre}} </td>
             <td><a href="#">Editar</a></td>
-            <td><a href="#">Eliminar</a></td>
+            <td>
+              <form action="{{route('admin.producto.delete', $productos->id)}}" method="POST">
+                @csrf  
+                @method('delete')
+                <button type="submit">
+                 Eliminar
+                </button>
+              </form>
+            </td>
           </tr>
         @endforeach
       </tbody>

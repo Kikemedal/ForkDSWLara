@@ -32,3 +32,6 @@ Route::get('/admin/productos', 'App\Http\Controllers\admin\AdminProductControlle
 //El parametro name permite la personalizacion del nombre de la ruta. Esto hace que el acceso a la ruta sea más
 //conveniente.
 Route::post('admin/productos/almacena','App\Http\Controllers\admin\AdminProductController@almacena')->name("admin.producto");
+
+//Creamos las rutas para el controlador que elimina el producto
+Route::delete('/admin/productos/{id}/delete', 'App\Http\Controllers\admin\AdminProductController@destroy')->name('admin.producto.delete');
