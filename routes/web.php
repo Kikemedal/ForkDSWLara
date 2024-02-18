@@ -35,3 +35,11 @@ Route::post('admin/productos/almacena','App\Http\Controllers\admin\AdminProductC
 
 //Creamos las rutas para el controlador que elimina el producto
 Route::delete('/admin/productos/{id}/delete', 'App\Http\Controllers\admin\AdminProductController@destroy')->name('admin.producto.delete');
+
+//Creacion de rutas para la edicion de producto
+//1 tipo get que muestra el formulario de edicion
+Route::get('/admin/productos/{id}/edit', 'App\Http\Controllers\admin\AdminProductController@edit')->name('admin.producto.edit');
+
+
+//1 Ruta que señala al controlador que modifica el producto.
+Route::put('/admin/productos/{id}/edit/update', 'App\Http\Controllers\admin\AdminProductController@update')->name('admin.producto.update');

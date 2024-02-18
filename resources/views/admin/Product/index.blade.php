@@ -75,7 +75,7 @@
           <tr>
             <td> {{$productos->id}} </td>
             <td> {{$productos->nombre}} </td>
-            <td><a href="#">Editar</a></td>
+            <td><a href="{{route('admin.producto.edit', $productos->id)}}">Editar</a></td>
             <td>
               <form action="{{route('admin.producto.delete', $productos->id)}}" method="POST">
                 @csrf  

@@ -66,14 +66,42 @@ class AdminProductController extends Controller
         //Se returna la vista de donde ha sido llamado este metodo del controlador
         return back();
 
-
-
-
-
     }
 
     public function destroy($id){
         Product::destroy($id);
         return back();
+    }
+
+
+    public function edit($id){
+
+        $producto = Product::find($id);
+        $datos =[];
+        $datos['producto'] = $producto;
+
+        return view('admin.Product.edit')->with('datos', $datos);
+    }
+
+    public function update(Request $request){
+
+        $producto = Product::find($request->id);
+        $producto->nombre = $request->input('name');
+        $producto->descripcion = $request->input('description');
+        $producto->precio = $request->input('price');
+        if($request->hasFile('imagen')){
+            $nombre = $request->file("imagen")->getClientOriginalName(); //Este metodo devuelve la extensión incuilda.
+    
+            $nombreImagen = strval($request->id) . "_" . $nombre;
+    
+            $producto->imagen = $nombreImagen;
+    
+            Storage::disk('public')->put($nombreImagen, file_get_contents($request->file('imagen')->getRealPath()));
+        }
+
+        $producto->save();
+        return back();
+        //return view('admin.Product.index');
+        
     }
 }
