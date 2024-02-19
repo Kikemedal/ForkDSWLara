@@ -34,9 +34,7 @@
             <div class="col-lg-10 col-md-6 col-sm-12">
               <input name="imagen" type="file" class="form-control">
               <br>
-              <?php $imagen = $datos["producto"]->imagen ?>
-              <a href="{{ asset('public/storage/img/$imagen') }}" download>Descargar Archivo por Defecto</a>
-              <p> Si desea cambiar de archivo, suba uno en el campo de arriba </p>
+              <img style="width:250px;height:250px" src="{{ asset('storage/img/'.$datos["producto"]["imagen"]) }}">
             </div>
           </div>
         </div>

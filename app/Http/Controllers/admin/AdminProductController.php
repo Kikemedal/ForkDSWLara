@@ -100,8 +100,8 @@ class AdminProductController extends Controller
         }
 
         $producto->save();
-        return back();
-        //return view('admin.Product.index');
+        return redirect('/admin/productos');
+
         
     }
 }
